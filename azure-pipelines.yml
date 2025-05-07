@@ -34,7 +34,7 @@ steps:
   continueOnError: true
 
 - script: |
-    mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**target/surefire-reports/TEST*.xml" -DfeatureFiles="**src/test/resources/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="converted-test-results.xml"
+    mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -Dmaven.test.failure.ignore=true -DreportFiles="**target/surefire-reports/TEST*.xml" -DfeatureFiles="**src/test/resources/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="converted-test-results.xml"
   displayName: 'Convert Test Results'
 
 - task: PublishPipelineArtifact@1
